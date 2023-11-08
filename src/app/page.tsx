@@ -7,6 +7,7 @@ import Bananas from '../../public/BCATBananas.png';
 import UpOnly from '../../public/BCATUpOnly.png';
 import Windows from '../../public/BCATWindows.png';
 import { TwitterIcon, TwitterShareButton } from 'react-share';
+import UploadAvatar from './components/UploadAvatar'
 
 export default function Home() {
   const imageList = [
@@ -14,7 +15,7 @@ export default function Home() {
     UpOnly,
     Windows,
 ]
-const [file , setFile] = useState<File>();
+var serac = "";
 const [imageUrl , setImageUrl] = useState("");
 
 const [imageNum, setImageNum] = useState(0);
@@ -34,9 +35,6 @@ const [currentPageUrl, setCurrentUrl] = useState("") ;
 
 const combinedImageRef = useRef<HTMLCanvasElement>(null);
 
-
-
-
   return (
     <main >
        <div className="flex min-h-screen items-center flex-col w-full bg-black">
@@ -45,53 +43,38 @@ const combinedImageRef = useRef<HTMLCanvasElement>(null);
         </div>
         <div className='flex justify-center items-center'>
         <button onClick={handleIncrease} className='w-[100px] h-[100px] text-white text-7xl font-bold' > {"<"}</button>
-        <Image src={imageList[imageNum]} width={500} height={500} alt='/' className='z-10'/>
-        <Image src={imageUrl} width={200} height={200} layout='-1' alt='/' className='absolute rounded-full'/>
+        <Image src={imageList[imageNum]} width={500} height={500} alt='/' className='z-10 '/>
+        <Image src={serac} width={500} height={500} alt='/'  className='absolute'/>
         <button onClick={handleDecrease} className='w-[100px] h-[100px] text-white text-7xl font-bold' > {">"}</button>
         </div>
         <h2 className='p-5 text-white'>Upload your face and adjust it to fit the banana costume!</h2>
        <div className='flex justify-center items-center'>
-      <form action="" onClick={() => document.querySelector(".input")}>
-      <input id='imageInput' onChange={({target}) =>{
-            if(target.files)
-            {
-                const file = target.files[0];
-                setImageUrl (URL.createObjectURL(file));
-                setFile(file);
-                const reader = new FileReader();
-               reader.addEventListener("load", () => {
-                console.log(reader.result);
-               })
-               reader.readAsDataURL(file);
-            }
-            else setImageUrl("");
-          }            
-         } 
-    type="file" className='text-lg font-bold w-[120px] mx-10'/>
-      </form>
+      <button >
+      <UploadAvatar  />
+      </button>
         <button onClick={async () => {
-  if (imageList[imageNum] && imageUrl) {
-    const formData = new FormData();
-    formData.append('image1', imageList[imageNum].src );
-    formData.append('image2', imageUrl);
+          if (imageList[imageNum] && imageUrl) {
+            const formData = new FormData();
+            formData.append('image1', imageList[imageNum].src );
+            formData.append('image2', imageUrl);
 
-    const response = await fetch('/api/combineImages', {
-      method: 'POST',
-      body: formData,
-    });
+            const response = await fetch('/api/combineImages', {
+              method: 'POST',
+              body: formData,
+            });
 
-    if (response.ok) {
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'combined_image.png';
-      document.body.appendChild(a);
-      a.click();
-      window.URL.revokeObjectURL(url);
-    }
-  }}}
-className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10'  >Save</button>
+            if (response.ok) {
+              const blob = await response.blob();
+              const url = window.URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = 'combined_image.png';
+              document.body.appendChild(a);
+              a.click();
+              window.URL.revokeObjectURL(url);
+            }
+          }}}
+      className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10'  >Save</button>
         <canvas
         ref={combinedImageRef}
         style={{ display: 'none' }}
