@@ -1,5 +1,5 @@
 "use client"
-import React, { useCallback, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import Image from 'next/image';
 import BananaMe from '../../public/BananaMe.png';
 import Link from 'next/link';
@@ -15,7 +15,6 @@ export default function Home() {
     UpOnly,
     Windows,
 ]
-var serac = "";
 const [imageUrl , setImageUrl] = useState("");
 
 const [imageNum, setImageNum] = useState(0);
@@ -32,8 +31,6 @@ const handleDecrease = () => {
   setImageNum(imageNum -1)
 }
 
-const combinedImageRef = useRef<HTMLCanvasElement>(null);
-
   return (
     <main >
        <div className="flex min-h-screen items-center flex-col w-full bg-black">
@@ -43,7 +40,6 @@ const combinedImageRef = useRef<HTMLCanvasElement>(null);
         <div className='flex justify-center items-center'>
         <button onClick={handleIncrease} className='w-[100px] h-[100px] text-white text-7xl font-bold' > {"<"}</button>
         <Image src={imageList[imageNum]} width={500} height={500} alt='/' className='z-10 '/>
-        <Image src={serac} width={500} height={500} alt='/'  className='absolute'/>
         <button onClick={handleDecrease} className='w-[100px] h-[100px] text-white text-7xl font-bold' > {">"}</button>
         </div>
         <h2 className='p-5 text-white'>Upload your face and adjust it to fit the banana costume!</h2>
@@ -52,12 +48,6 @@ const combinedImageRef = useRef<HTMLCanvasElement>(null);
       <UploadAvatar  />
       </button>
         <button className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10'  >Save</button>
-        <canvas
-        ref={combinedImageRef}
-        style={{ display: 'none' }}
-        width="128" // Width of the combined image
-        height="128" // Height of the combined image
-      ></canvas>
        </div>
         <TwitterShareButton url={imageUrl} >
           <button className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 my-10'  >Share on X</button>
