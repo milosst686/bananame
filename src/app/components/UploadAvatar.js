@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import React, {useEffect,useState} from 'react'
+import React, {useState} from 'react'
 import Avatar from 'react-avatar-edit'
-import Image from 'next/image';
 
  const UploadAvatar = () => {
     const [src, setSrc] = useState(null);
@@ -31,7 +30,7 @@ import Image from 'next/image';
         />
        </div>
       <div className='relative top-[-420px] left-[95px]'>
-         <img src={sr} width={150} height={150}  alt='/'/>      
+      <img src={sr} width={150} height={150}  alt='/'/>     
       </div>
     </div>
   )
