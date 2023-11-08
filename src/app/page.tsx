@@ -31,7 +31,6 @@ const handleDecrease = () => {
   else
   setImageNum(imageNum -1)
 }
-const [currentPageUrl, setCurrentUrl] = useState("") ;
 
 const combinedImageRef = useRef<HTMLCanvasElement>(null);
 
@@ -52,29 +51,7 @@ const combinedImageRef = useRef<HTMLCanvasElement>(null);
       <button >
       <UploadAvatar  />
       </button>
-        <button onClick={async () => {
-          if (imageList[imageNum] && imageUrl) {
-            const formData = new FormData();
-            formData.append('image1', imageList[imageNum].src );
-            formData.append('image2', imageUrl);
-
-            const response = await fetch('/api/combineImages', {
-              method: 'POST',
-              body: formData,
-            });
-
-            if (response.ok) {
-              const blob = await response.blob();
-              const url = window.URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = 'combined_image.png';
-              document.body.appendChild(a);
-              a.click();
-              window.URL.revokeObjectURL(url);
-            }
-          }}}
-      className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10'  >Save</button>
+        <button className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10'  >Save</button>
         <canvas
         ref={combinedImageRef}
         style={{ display: 'none' }}
