@@ -6,7 +6,7 @@ import Link from 'next/link';
 import Bananas from '../../public/BCATBananas.png';
 import UpOnly from '../../public/BCATUpOnly.png';
 import Windows from '../../public/BCATWindows.png';
-import { TwitterIcon, TwitterShareButton } from 'react-share';
+import {TwitterShareButton } from 'react-share';
 import UploadAvatar from './components/UploadAvatar'
 
 export default function Home() {
