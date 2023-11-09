@@ -52,7 +52,7 @@ const handleDecrease = () => {
         <TwitterShareButton url={imageUrl} >
           <button className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 my-10'  >Share on X</button>
         </TwitterShareButton>
-        <Link href="" target="_blank" >
+        <Link href="https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0x0590cc9232ebf68d81f6707a119898219342ecb9" target="_blank" >
         <button className='w-[120px] text-lg font-bold h-[34px] bg-slate-50 '>Buy $BCAT</button>
         </Link>
        
