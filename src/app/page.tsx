@@ -7,7 +7,11 @@ import Bananas from '../../public/BCATBananas.png';
 import UpOnly from '../../public/BCATUpOnly.png';
 import Windows from '../../public/BCATWindows.png';
 import {TwitterShareButton } from 'react-share';
-import UploadAvatar from './components/UploadAvatar'
+import dynamic from "next/dynamic";
+
+const UploadAvatar = dynamic(() => import("./components/UploadAvatar"), {
+  ssr: false,
+});
 
 export default function Home() {
   const imageList = [
