@@ -23,10 +23,10 @@ const BananaImage = ({ sr }: BananaImageProps) => {
   };
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center w-full h-full">
       <button
         onClick={handleIncrease}
-        className="w-[100px] h-[100px] text-white text-7xl font-bold"
+        className="w-[100px] h-[100px] text-yellow-500 text-7xl font-bold"
       >
         {" "}
         {"<"}
@@ -35,19 +35,19 @@ const BananaImage = ({ sr }: BananaImageProps) => {
         <img
           src={imageList[imageNum].src}
           alt="/"
-          className="z-10 w-[500px] h-[500px]"
+          className="z-10 md:w-[500px] md:h-[500px] w-[250px] h-[250px] "
         />
         {sr && (
           <img
             src={sr}
             alt="/"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150px] h-[150px]"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[150px] md:h-[150px] w-[63px] h-[63px] "
           />
         )}
       </div>
       <button
         onClick={handleDecrease}
-        className="w-[100px] h-[100px] text-white text-7xl font-bold"
+        className="w-[100px] h-[100px] text-yellow-500 text-7xl font-bold"
       >
         {" "}
         {">"}

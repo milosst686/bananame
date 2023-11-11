@@ -39,8 +39,8 @@ const [sr, setSr] = useState("");
 
   return (
     <main>
-      <div className="flex min-h-screen items-center flex-col w-full bg-black text-black">
-        <div className="flex justify-center pt-5">
+      <div className="flex sm:h-100% min-h-screen items-center flex-col w-full bg-black text-black">
+        <div className="flex justify-center w-full pt-5">
           <Image
             src={BananaMe}
             id="BananaMeText"
@@ -49,24 +49,23 @@ const [sr, setSr] = useState("");
             height={96}
           />
         </div>
-
-        <h2 className="p-5 text-white">
+        <h2 className="p-5 text-yellow-500">
           Upload your face and adjust it to fit the banana costume!
         </h2>
         <BananaImage sr={sr} />
-        <div className="flex justify-center items-center mt-6">
-          <button>
+        <div className="flex justify-center items-center text-center mt-6 w-full ">
+          <button className='h-[34px] bg-yellow-500 border-yellow-800 border-4 rounded-xl md:mx-10 mx-5'>
             <UploadAvatar setSr={setSr} />
           </button>
           <button
             onClick={handleSaveScreenshot}
-            className="w-[120px] text-lg font-bold h-[34px] bg-slate-50 mx-10"
+            className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 md:mx-10 mx-5 border-yellow-800 border-4 rounded-xl"
           >
             Save
           </button>
         </div>
         <TwitterShareButton url={imageUrl}>
-          <div className="w-[120px] text-lg font-bold h-[34px] bg-slate-50 my-10">
+          <div className="w-[120px] text-lg font-bold h-[34px] bg-yellow-500 my-10 border-yellow-800 border-4 rounded-xl">
             Share on X
           </div>
         </TwitterShareButton>
@@ -74,7 +73,7 @@ const [sr, setSr] = useState("");
           href="https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0x0590cc9232ebf68d81f6707a119898219342ecb9"
           target="_blank"
         >
-          <button className="w-[120px] text-lg font-bold h-[34px] bg-slate-50 ">
+          <button className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 border-yellow-800 border-4 rounded-xl ">
             Buy $BCAT
           </button>
         </Link>

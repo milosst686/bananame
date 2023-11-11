@@ -19,8 +19,8 @@ const UploadAvatar = ({setSr}: UploadAvatarProps) => {
   };
 
   return (
-    <div className="h-[34px] bg-white text-center items-center">
-      <div className="static">
+    <div>
+      <div  className="items-center text-center">
         <Avatar
           width={120}
           height={34}
