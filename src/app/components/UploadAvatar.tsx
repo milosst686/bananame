@@ -1,3 +1,4 @@
+import { color } from "html2canvas/dist/types/css/types/color";
 import React, { useState } from "react";
 import Avatar from "react-avatar-edit";
 
@@ -20,12 +21,13 @@ const UploadAvatar = ({setSr}: UploadAvatarProps) => {
 
   return (
     <div>
-      <div  className="items-center text-center">
+      <div  className="items-center text-center text-yellow-300">
         <Avatar
           width={120}
-          height={34}
+          height={20}
           src={src}
           label="Choose"
+          labelStyle={{color: "rgb(254, 240, 138)", fontSize: '1.25em',fontWeight: '700',}}
           borderStyle={{ color: "black", width: 1 }}
           onClose={onClose}
           onCrop={onCrop}

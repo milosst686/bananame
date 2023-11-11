@@ -39,7 +39,7 @@ const [sr, setSr] = useState("");
 
   return (
     <main>
-      <div className="flex sm:h-100% min-h-screen items-center flex-col w-full bg-black text-black">
+      <div className="flex sm:h-100% min-h-screen items-center flex-col w-full bg-black text-yellow-200">
         <div className="flex justify-center w-full pt-5">
           <Image
             src={BananaMe}
@@ -49,7 +49,7 @@ const [sr, setSr] = useState("");
             height={96}
           />
         </div>
-        <h2 className="p-5 text-yellow-500">
+        <h2 className="p-5">
           Upload your face and adjust it to fit the banana costume!
         </h2>
         <BananaImage sr={sr} />
@@ -59,21 +59,21 @@ const [sr, setSr] = useState("");
           </button>
           <button
             onClick={handleSaveScreenshot}
-            className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 md:mx-10 mx-5 border-yellow-800 border-4 rounded-xl"
+            className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 md:mx-10 mx-5 border-yellow-800 border-4 rounded-xl my-5"
           >
             Save
           </button>
         </div>
-        <TwitterShareButton url={imageUrl}>
+       {/*<TwitterShareButton url={imageUrl}>
           <div className="w-[120px] text-lg font-bold h-[34px] bg-yellow-500 my-10 border-yellow-800 border-4 rounded-xl">
             Share on X
           </div>
-        </TwitterShareButton>
+  </TwitterShareButton>*/}
         <Link
           href="https://swap.defillama.com/?chain=ethereum&from=0x0000000000000000000000000000000000000000&to=0x0590cc9232ebf68d81f6707a119898219342ecb9"
           target="_blank"
         >
-          <button className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 border-yellow-800 border-4 rounded-xl ">
+          <button className="w-[120px] text-lg font-bold h-[34px]  bg-yellow-500 border-yellow-800 border-4 rounded-xl my-5">
             Buy $BCAT
           </button>
         </Link>
