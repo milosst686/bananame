@@ -35,13 +35,13 @@ const BananaImage = ({ sr }: BananaImageProps) => {
         <img
           src={imageList[imageNum].src}
           alt="/"
-          className="z-10 md:w-[500px] md:h-[500px] w-[250px] h-[250px] "
+          className="z-10 md:w-[500px] md:h-[500px] w-[200px] h-[200px] "
         />
         {sr && (
           <img
             src={sr}
             alt="/"
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:w-[150px] md:h-[150px] w-[63px] h-[63px] "
+            className="absolute top-1/2 left-1/2 transform -translate-x-[52%] -translate-y-1/2 md:w-[150px] md:h-[135px] w-[55px] h-[51px] "
           />
         )}
       </div>
